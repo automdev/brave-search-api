@@ -4,7 +4,7 @@
 const headers = { "x-api-key": process.env.AUTOM_API_KEY, "Content-Type": "application/json" };
 
 const params = new URLSearchParams({
-  "query": "YOUR_VALUE",
+  "query": "newton laws",
 });
 const response = await fetch(`https://api.autom.dev/v1/brave/images?${params}`, { headers });
 if (!response.ok) {

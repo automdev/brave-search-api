@@ -75,7 +75,7 @@ response = requests.get(
     "https://api.autom.dev/v1/brave/search",
     headers=HEADERS,
     params={
-        "query": "YOUR_VALUE",
+        "query": "growth hacking",
     },
     timeout=120,
 )
@@ -110,7 +110,7 @@ type BraveSearchApi = {
 const headers = { "x-api-key": process.env.AUTOM_API_KEY!, "Content-Type": "application/json" };
 
 const params = new URLSearchParams({
-  "query": "YOUR_VALUE",
+  "query": "growth hacking",
 });
 
 const response = await fetch(`https://api.autom.dev/v1/brave/search?${params}`, { headers });
@@ -196,7 +196,7 @@ response = requests.get(
     "https://api.autom.dev/v1/brave/images",
     headers=HEADERS,
     params={
-        "query": "YOUR_VALUE",
+        "query": "newton laws",
     },
     timeout=120,
 )
@@ -235,7 +235,7 @@ type BraveImagesApi = {
 const headers = { "x-api-key": process.env.AUTOM_API_KEY!, "Content-Type": "application/json" };
 
 const params = new URLSearchParams({
-  "query": "YOUR_VALUE",
+  "query": "newton laws",
 });
 
 const response = await fetch(`https://api.autom.dev/v1/brave/images?${params}`, { headers });
@@ -329,7 +329,7 @@ response = requests.get(
     "https://api.autom.dev/v1/brave/videos",
     headers=HEADERS,
     params={
-        "query": "YOUR_VALUE",
+        "query": "newton laws",
     },
     timeout=120,
 )
@@ -369,7 +369,7 @@ type BraveVideosApi = {
 const headers = { "x-api-key": process.env.AUTOM_API_KEY!, "Content-Type": "application/json" };
 
 const params = new URLSearchParams({
-  "query": "YOUR_VALUE",
+  "query": "newton laws",
 });
 
 const response = await fetch(`https://api.autom.dev/v1/brave/videos?${params}`, { headers });
