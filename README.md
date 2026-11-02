@@ -8,7 +8,7 @@
 
 The **Autom Brave Search API** returns Brave web, image and video results as structured JSON.
 
-- **Brave Search API** — Search Brave Search via API and retrieve structured organic results with pagination, SafeSearch, and locale.
+- **Brave Search API** — Search Brave Search via API and retrieve structured organic results with pagination.
 - **Brave Images API** — Search Brave Images via API and retrieve structured image results with pagination and SafeSearch.
 - **Brave Videos API** — Search Brave Videos via API and retrieve structured video results with pagination and SafeSearch.
 
@@ -47,7 +47,7 @@ pip install requests        # Python
 
 ## Brave Search API
 
-Search Brave Search via API and retrieve structured organic results with pagination, SafeSearch, and locale.
+Search Brave Search via API and retrieve structured organic results with pagination.
 
 `GET https://api.autom.dev/v1/brave/search` · **1 credit per request** · [API reference](https://app.autom.dev/openapi)
 
@@ -57,9 +57,8 @@ Search Brave Search via API and retrieve structured organic results with paginat
 |---|---|---|---|---|
 | `query` | query | string | ✅ | The search query you want to run on Brave Search. |
 | `page` | query | number | — | Page number for pagination. |
-| `gl` | query | string | — | Country code (e.g. fr, us). Mapped to Brave country. |
-| `hl` | query | string | — | Language code (e.g. fr, en). Mapped to Brave lang. |
-| `safe` | query | string | — | SafeSearch: active \| off \| moderate \| strict. Google-style active maps to Brave strict. |
+| `gl` | query | string | — | Country code, for example us, fr, gb, de. |
+| `hl` | query | string | — | Language code, for example en, fr, de. |
 
 ### Python example
 
@@ -101,9 +100,7 @@ type BraveSearchApi = {
     gl?: string;
     hl?: string;
     page?: number;
-    safe?: string;
     engine?: string;
-    safesearch?: string;
   };
 };
 
@@ -128,21 +125,26 @@ Example response from the API reference, abridged.
 {
   "organic_results": [
     {
-      "link": "https://www.crunchbase.com/organization/growhack",
-      "title": "GrowHack - Crunchbase Company Profile & Funding",
-      "domain": "www.crunchbase.com",
-      "snippet": "GrowHack is the leading lean marketing resource for startups.",
+      "link": "https://www.anthropic.com/",
+      "title": "Anthropic",
+      "domain": "www.anthropic.com",
+      "snippet": "Anthropic is an AI safety company. Claude is its assistant.",
       "position": 1
+    },
+    {
+      "link": "https://docs.anthropic.com/",
+      "title": "Anthropic documentation",
+      "domain": "docs.anthropic.com",
+      "snippet": "Documentation for the Claude API and the Anthropic platform.",
+      "position": 2
     }
   ],
   "search_parameters": {
-    "q": "growth hacking",
+    "q": "anthropic",
     "gl": "us",
     "hl": "en",
     "page": 1,
-    "safe": "active",
-    "engine": "brave",
-    "safesearch": "strict"
+    "engine": "brave"
   }
 }
 ```
@@ -162,9 +164,7 @@ Example response from the API reference, abridged.
 | `search_parameters.gl` | string |  |
 | `search_parameters.hl` | string |  |
 | `search_parameters.page` | integer |  |
-| `search_parameters.safe` | string |  |
 | `search_parameters.engine` | string |  |
-| `search_parameters.safesearch` | string |  |
 
 ## Brave Images API
 
